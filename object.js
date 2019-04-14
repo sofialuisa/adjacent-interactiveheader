@@ -29,17 +29,18 @@ function init() {
     // bgTexture.wrapT = THREE.MirroredRepeatWrapping;
 
     //LIGHTS
-    var ambientLight = new THREE.AmbientLight( 0x9933ff,.5);
+    var ambientLight = new THREE.AmbientLight( 0x9933ff,.2);
     scene.add( ambientLight );
 
-    var pointLight = new THREE.DirectionalLight( 0x9933ff, .9);
+    var pointLight = new THREE.DirectionalLight( 0x9933ff, .5);
+    pointLight.position.set( 0, 1, 0 );
     camera.add( pointLight );
     scene.add( camera );
 
     scene.add( new THREE.HemisphereLight( 0x404040, 0x111122 ) );
 
     spotLight = new THREE.SpotLight( 0x00e600, .8 );
-    spotLight.position.set( 0.5, 0, 1 );
+    spotLight.position.set( 0, 1, 0.1 );
     spotLight.position.multiplyScalar( 700 );
     spotLight.castShadow = true;
     spotLight.shadow.mapSize.width = 2048;
